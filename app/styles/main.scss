@@ -21,6 +21,15 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
     padding: 0.2em 0;
 }
 
+::selection {
+  background: #990000; /* WebKit/Blink Browsers */
+  color: #fff;
+}
+::-moz-selection {
+  background: #990000; /* Gecko Browsers */
+  color: #fff;
+}
+
 body {
     color: #000;
 }
@@ -29,6 +38,7 @@ a {
     color: #990000;
     text-decoration: none;
     &:hover {
+        color: #990000;
         text-decoration: underline;
     }
 }
@@ -72,10 +82,10 @@ a {
 }
 
 #caption_container {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 7;
-    -webkit-box-orient: vertical;
+    // overflow: hidden;
+    // display: -webkit-box;
+    // -webkit-line-clamp: 7;
+    // -webkit-box-orient: vertical;
 }
 
 .article_img {

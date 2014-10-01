@@ -1,4 +1,5 @@
 
+  $clamp(caption, {clamp: 7});
 
   var next_url;
 
@@ -21,7 +22,7 @@
 
   function add_data(data) {
     console.log(data[0].caption.text);
-    $('.caption').html(data[0].caption.text);
+    $('#caption').html(data[0].caption.text);
     $('.article_img').attr('src', data[0].images.standard_resolution.url);
     $('time').html(timeConverter(data[0].created_time));
   }

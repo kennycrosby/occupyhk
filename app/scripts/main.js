@@ -28,6 +28,7 @@
     }
     $('.article_img').attr('src', data[0].images.standard_resolution.url);
     $('time').html(timeConverter(data[0].created_time));
+    $('.instagram_link').attr('href', data[0].link);
   }
 
   function setup_next_link() {

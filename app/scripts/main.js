@@ -22,6 +22,7 @@
 
   function add_data(data) {
     if (data[0].caption) {
+      $('#caption').html('');
       $('#caption').html(data[0].caption.text);
     } else {
       $('#caption').html('#occupyhk');

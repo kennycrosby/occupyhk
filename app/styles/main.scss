@@ -49,6 +49,10 @@ a {
 
 }
 
+hr {
+    border-top: 1px solid #000;
+}
+
 /* Custom page header */
 .header {
     border-bottom: 2px solid #000;
@@ -61,12 +65,18 @@ a {
 
     h1 {
         font-family: 'english_towneregular', Times, "Times New Roman", serif;
-        font-size: 74px;
+        font-size: 35px;
+        @media screen and (min-width: 768px) {
+            font-size: 74px;
+        }
     }
     p {
         font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
         font-weight: 400;
-        font-size: 14px;
+        font-size: 11px;
+        @media screen and (min-width: 768px) {
+            font-size: 14px;
+        }
     }
 }
 
@@ -75,9 +85,12 @@ a {
         font-family: Georgia, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", serif;
         font-weight: 900;
         font-style: italic;
-        font-size: 40px;
+        font-size: 18px;
         text-transform: uppercase;
         word-wrap: break-word;
+        @media screen and (min-width: 768px) {
+            font-size: 40px;
+        }
     }
     h3 {
         font-family: Georgia, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", serif;
@@ -115,11 +128,13 @@ nav {
     }
 }
 
+#share {
+    margin-bottom: 15px;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {
         max-width: 960px;
     }
-
-
 }

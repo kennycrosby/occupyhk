@@ -130,6 +130,16 @@ nav {
 
 #share {
     margin-bottom: 15px;
+    overflow: hidden;
+    .fb_iframe_widget {
+        display: inline-block;
+        position: relative;
+        float: left;
+        margin-right: 10px;
+    }
+    #twitter-widget-0 {
+        float: left;
+    }
 }
 
 /* Responsive: Portrait tablets and up */

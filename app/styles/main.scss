@@ -51,7 +51,7 @@ a {
 
 /* Custom page header */
 .header {
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 2px solid #000;
     width: 100%;
     h1,
     p {
@@ -64,8 +64,8 @@ a {
         font-size: 74px;
     }
     p {
-        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-        font-weight: 500;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight: 400;
         font-size: 14px;
     }
 }
@@ -78,6 +78,11 @@ a {
         font-size: 40px;
         text-transform: uppercase;
         word-wrap: break-word;
+    }
+    h3 {
+        font-family: Georgia, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", serif;
+        font-weight: 500;
+        font-size: 14px;
     }
 }
 
@@ -102,8 +107,10 @@ nav {
         color: #fff;
         display: block;
         text-align: center;
+        border: none;
+        outline: none;
         &:hover {
-
+            background: #444;
         }
     }
 }

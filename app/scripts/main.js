@@ -1,4 +1,5 @@
 
+  // Limit to 7 lines
   $clamp(caption, {clamp: 7});
 
   var next_url;
@@ -14,15 +15,17 @@
     dataType: 'jsonp',
     data: requestData
   }).success(function(response) {
-    console.log(response);
     add_data(response.data);
     next_url = response.pagination.next_url;
     setup_next_link();
   });
 
   function add_data(data) {
-    console.log(data[0].caption.text);
-    $('#caption').html(data[0].caption.text);
+    if (data[0].caption) {
+      $('#caption').html(data[0].caption.text);
+    } else {
+      $('#caption').html('#occupyhk');
+    }
     $('.article_img').attr('src', data[0].images.standard_resolution.url);
     $('time').html(timeConverter(data[0].created_time));
   }
@@ -30,22 +33,24 @@
   function setup_next_link() {
 
     $('.next_article').on('click', function(e){
-      console.log('fart');
+
+      var $this = $(this);
+      $this.attr('disabled', 'disabled');
+
       $.ajax({
         url: next_url,
         type: 'GET',
         dataType: 'jsonp',
         data: requestData
       }).success(function(response) {
-        console.log(response);
         next_url = response.pagination.next_url;
         add_data(response.data);
+        $this.attr('disabled', false);
       });
 
       e.preventDefault();
 
     });
-
 
   }
 

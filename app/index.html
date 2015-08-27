@@ -5,10 +5,9 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>The HK Times</title>
         <meta name="description" content="We can't trust the media. Witness the history directly from people. Please hashtag your instagram pictures with #occupyHK and let the world witness the history from your eyes.">
-
+        
         <meta property="og:title" content="The HK Times" />
         <meta property="og:type" content="article" />
         <meta property="og:image" content="http://occupyhk.com/images/fb-share.jpg" />
@@ -17,84 +16,66 @@
 
         <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <!-- build:css styles/vendor.css -->
-        <!-- bower:css -->
-        <link rel="stylesheet" href="bower_components/sass-bootstrap/dist/css/bootstrap.css" />
-        <!-- endbower -->
-        <!-- endbuild -->
-        <!-- build:css(.tmp) styles/main.css -->
-        <link rel="stylesheet" href="styles/main.css">
-        <!-- endbuild -->
-        <script src="bower_components/modernizr/modernizr.js"></script>
-        <link rel="shortcut icon" href="favicon.ico?v=2" />
+        <link rel="shortcut icon" href="favicon.ico" />
 
+        <link rel="stylesheet" href="styles/main.css">
+        
+        <!-- build:js scripts/vendor/modernizr.js -->
+        <script src="bower_components/modernizr/modernizr.js"></script>
+        <!-- endbuild -->
+        
     </head>
     <body>
         <!--[if lt IE 10]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
-
+        
         <div class="container">
             <div class="header">
                 <h1>THE HK TIMES</h1>
-                <p>We can't trust the media. Witness the history directly from people.<p>
-                <p>Please hashtag your instagram pictures with <a href="https://twitter.com/hashtag/OccupyHK?src=hash" target="_blank">#occupyHK</a> and let the world witness the history from your eyes.</p>
+                <h2>We can't trust the media. Witness the history directly from people.</h3>
+
+                <h3>Please hashtag your instagram pictures with <a href="https://twitter.com/hashtag/OccupyHK?src=hash" target="_blank">#occupyHK</a> and let the world witness the history from your eyes. For the people, by the people.</h3>
             </div>
 
-            <div class="row main">
-                <div class="col-md-6">
-                    <div id="caption_container">
-                        <h2 id="caption"></h2>
-                    </div>
-                    <time></time>
-                    <hr />
-                    <h3>SHARE THE NEWS NOW</h3>
-                    <div id="share">
-                        <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-                        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                        <div class="fb-like" data-href="http://occupyhk.com" data-width="200" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+            <div id="app">
+                <div class="row article">
+                    <div class="col-md-12">
+                      <p>Please wait while we load the data...</p>
                     </div>
                 </div>
+            </div>
+
+            <div id="content" class="row">
                 <div class="col-md-6">
-                    <a href="" class="instagram_link" target="_blank"><img src="" class="article_img img-responsive"></a>
-                    <nav>
-                        <button class="next_article">News Up Next &rsaquo;</button>
-                    </nav>
-                    <!-- <div id="instafeed"></div> -->
+
+                    <h4>About this Publication</h4>
+                    
+                    <p>Occupy Hong Kong and Occupy Central are civil disobedience campaigns in Hong Kong, China. The Occupy Central with Love and Peace organization intends to pressure the PRC government in China into granting an electoral system that "satisf[ies] the international standards in relation to universal suffrage" in the Hong Kong Chief Executive election in 2017.</p>
+
+                    <p>OCLP is fighting for equal sufferage in Hong Kong through Civil Disobedience means, mainly through the non-violent occupation of Central. Please join us and help spread the word, love and peace.</p>
+
                 </div>
+                <div class="col-md-6">
+                    <h4>The Opinion Column</h4>
+                    
+
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>Spread ☮ ♥ &amp; Democracy</p>
             </div>
 
         </div>
-
-        <script>
-          window.fbAsyncInit = function() {
-            FB.init({
-              appId      : '749247538480411',
-              xfbml      : true,
-              version    : 'v2.1'
-            });
-          };
-
-          (function(d, s, id){
-             var js, fjs = d.getElementsByTagName(s)[0];
-             if (d.getElementById(id)) {return;}
-             js = d.createElement(s); js.id = id;
-             js.src = "//connect.facebook.net/en_US/sdk.js";
-             fjs.parentNode.insertBefore(js, fjs);
-           }(document, 'script', 'facebook-jssdk'));
-        </script>
-
+        
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
-        <script src="bower_components/jquery/jquery.js"></script>
-        <script src="bower_components/instafeed.js/instafeed.js"></script>
-        <script src="bower_components/clamp.js/clamp.js"></script>
-        <script src="bower_components/sass-bootstrap/dist/js/bootstrap.js"></script>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
-
+        <script src="scripts/app.js"></script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -102,26 +83,7 @@
             e=o.createElement(i);r=o.getElementsByTagName(i)[0];
             e.src='//www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-55264211-1');ga('send','pageview');
+            ga('create','UA-XXXXX-X');ga('send','pageview');
         </script>
-
-        <!-- build:js scripts/plugins.js -->
-        <script src="bower_components/sass-bootstrap/js/affix.js"></script>
-        <script src="bower_components/sass-bootstrap/js/alert.js"></script>
-        <script src="bower_components/sass-bootstrap/js/dropdown.js"></script>
-        <script src="bower_components/sass-bootstrap/js/tooltip.js"></script>
-        <script src="bower_components/sass-bootstrap/js/modal.js"></script>
-        <script src="bower_components/sass-bootstrap/js/transition.js"></script>
-        <script src="bower_components/sass-bootstrap/js/button.js"></script>
-        <script src="bower_components/sass-bootstrap/js/popover.js"></script>
-        <script src="bower_components/sass-bootstrap/js/carousel.js"></script>
-        <script src="bower_components/sass-bootstrap/js/scrollspy.js"></script>
-        <script src="bower_components/sass-bootstrap/js/collapse.js"></script>
-        <script src="bower_components/sass-bootstrap/js/tab.js"></script>
-        <!-- endbuild -->
-
-        <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
-</body>
+    </body>
 </html>

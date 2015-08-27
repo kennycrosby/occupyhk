@@ -1,6 +1,6 @@
-$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+$icon-font-path: "/bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 
-@import 'sass-bootstrap/lib/bootstrap';
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap";
 
 @font-face {
     font-family: 'english_towneregular';
@@ -13,6 +13,38 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
     font-weight: normal;
     font-style: normal;
 }
+
+.btn {
+    background: #111;
+    border: none;
+    &:hover,
+    &:visited {
+        background: #444;
+    }
+    &:focus,
+    &:active,
+    &:active:focus {
+        background: #000;
+    }
+}
+
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+$line-height: 1.2;
+$lines: 7;
 
 .browsehappy {
     margin: 0.2em 0;
@@ -30,8 +62,12 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
   color: #fff;
 }
 
+/* Space out content a bit */
 body {
-    color: #000;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #f0f1f3;
+    font-family: Georgia, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", serif;
 }
 
 a {
@@ -42,109 +78,156 @@ a {
         text-decoration: underline;
     }
 }
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
-.header {
-    padding: 0 15px;
-    margin: 15px 0;
-
+.header,
+.marketing,
+.footer {
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-hr {
-    border-top: 1px solid #000;
-}
-
-/* Custom page header */
 .header {
-    border-bottom: 2px solid #000;
     width: 100%;
-    h1,
-    p {
+    h1,h2,h3 {
         text-align: center;
-        text-transform: uppercase;
     }
 
     h1 {
         font-family: 'english_towneregular', Times, "Times New Roman", serif;
         font-size: 35px;
-        @media screen and (min-width: 768px) {
-            font-size: 74px;
-        }
-    }
-    p {
-        font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-        font-weight: 400;
-        font-size: 11px;
-        @media screen and (min-width: 768px) {
-            font-size: 14px;
-        }
-    }
-}
-
-.main {
-    h2 {
-        font-family: Georgia, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", serif;
-        font-weight: 900;
-        font-style: italic;
-        font-size: 18px;
         text-transform: uppercase;
-        word-wrap: break-word;
+        margin-bottom: 0;
         @media screen and (min-width: 768px) {
-            font-size: 40px;
+            font-size: 100px;
+            margin-top: 20px;
+        }
+    }
+    h2,h3 {
+        font-family: Georgia, serif;
+        font-weight: 400;        
+    }
+    h2 {
+        font-size: 11px;
+        margin-top: 0;
+        @media screen and (min-width: 768px) {
+            font-size: 20px;
         }
     }
     h3 {
-        font-family: Georgia, Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", serif;
-        font-weight: 500;
+        line-height: inherit;
         font-size: 14px;
-    }
-}
-
-#caption_container {
-    // overflow: hidden;
-    // display: -webkit-box;
-    // -webkit-line-clamp: 7;
-    // -webkit-box-orient: vertical;
-}
-
-.article_img {
-    margin: 0 auto;
-}
-
-nav {
-    .next_article {
-        text-decoration: none;
-        padding: 10px 0;
-        width: 200px;
-        margin: 10px auto;
-        background: #000;
-        color: #fff;
-        display: block;
-        text-align: center;
-        border: none;
-        outline: none;
-        &:hover {
-            background: #444;
+        border-top: 2px solid #000;
+        border-bottom: 2px solid #000;
+        @media screen and (min-width: 768px) {
+            font-size: 24px;
+            margin: 50px 0 0 0;
+            padding: 20px 0;
         }
     }
 }
 
-#share {
-    margin-bottom: 15px;
-    overflow: hidden;
-    .fb_iframe_widget {
-        display: inline-block;
-        position: relative;
-        float: left;
-        margin-right: 10px;
+#app {
+    .row {
+        margin: 10px 0;
     }
-    #twitter-widget-0 {
-        float: left;
+    .article {
+        padding: 40px 0;
+        border-bottom: 1px solid #ccc;
+
+        
+        img {
+            border: 1px solid #ccc;
+            -webkit-filter: grayscale(1);
+            filter: grayscale(1);
+            &:hover {
+                -webkit-animation: filter-animation .5s forwards;
+            }
+        }
+        h2 {
+            font-weight: 900;
+            font-style: italic;
+            font-size: 18px;
+            text-transform: uppercase;
+            word-wrap: break-word;
+            margin-top: 0;
+
+            // overflow: hidden;
+            // text-overflow: ellipsis;
+            // display: -webkit-box;
+            // -webkit-line-clamp: 3;
+            // -webkit-box-orient: vertical;
+
+            line-height: $line-height;
+            max-height: $lines * $line-height * 1em; //exact number of lines
+            overflow: hidden;
+            &:before { // for the ellipsis
+                bottom: $line-height * 1em;
+                content: '\02026';
+                height: $line-height * 1em;
+                position: absolute;
+                right: 0;
+                text-align: right;
+                width: 4em;
+            }
+
+            @media screen and (min-width: 768px) {
+                font-size: 40px;
+            }
+        }
+        h3 {
+            font-weight: 100;
+            font-size: 18px;
+            color: #999;
+        }
+        h4 {
+            font-size: 14px;
+            color: #777;
+        }
+    }
+}
+
+/* Custom page footer */
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+
+/* Supporting marketing content */
+.marketing {
+    margin: 40px 0;
+    p + h4 {
+        margin-top: 28px;
     }
 }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {
-        max-width: 960px;
+        max-width: 1024px;
     }
+
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+}
+
+@-webkit-keyframes filter-animation {
+  0% {
+    -webkit-filter: grayscale(100%);
+  }
+  
+  100% {
+    -webkit-filter: grayscale(0%);
+  }
 }
